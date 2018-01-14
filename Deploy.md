@@ -22,4 +22,19 @@
     
 ## Install mysql server
     sudo apt install mysql-server -y
+    
+## Install PHP
+    sudo apt install php-fpm php-mysql php-mbstring php-zip php-xml -y
+    
+## Configure PHP
+    sudo nano /etc/php/7.0/fpm/php.ini
+    
+    ;cgi.fix_pathinfo=1
+    cgi.fix_pathinfo=0
+    
+## Install composer
+    sudo apt install composer -y
+
+## Configuring Composer
+    composer global require "laravel/installer"
 
