@@ -66,5 +66,5 @@ To test your installation, run:
     composer
 
 ## Configuring Composer
-    composer global require "laravel/installer"
+    composer global require "laravel/installer=~1.1"
 
