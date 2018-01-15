@@ -50,7 +50,7 @@ Next, run a short PHP script to verify that the installer matches the SHA-384 ha
     
 To install composer globally, use the following:
     
-    php composer-setup.php
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
     php -r "unlink('composer-setup.php');"
     
 To test your installation, run:
