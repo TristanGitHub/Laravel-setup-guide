@@ -59,6 +59,7 @@ To install composer globally, use the following:
     
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer
     php -r "unlink('composer-setup.php');"
+    sudo apt install composer
     
 To test your installation, run:
 
