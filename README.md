@@ -25,6 +25,13 @@ Laravel setup guide for Ubuntu 16.04 on DigitalOcean
     
 ## Install mysql server
     sudo apt install mysql-server -y
+
+## Create mysql database and user
+    mysql -u root -p
+    CREATE DATABASE laravel DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+    GRANT ALL ON laravel.* TO 'laraveluser'@'localhost' IDENTIFIED BY 'yourpassword';
+    FLUSH PRIVILEGES;
+    EXIT;
     
 ## Install PHP
     sudo apt install php-fpm php-mysql php-mbstring php-zip php-xml -y
