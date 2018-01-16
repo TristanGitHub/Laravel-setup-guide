@@ -5,12 +5,12 @@ This tutorial, guides you to deploy a simple Laravel application with a producti
 
 Installing Laravel on Ubuntu 16.04 is pretty much easy. Follow this step by step guide and you should have Laravel up and running in few minutes.
 
-## 2. Update and Upgrade
+## Step 1 Update and Upgrade
     sudo apt-get update
     sudo apt-get upgrade -y
 
-## 3. Create new sudo user
-Before we start we will need a 
+## Step 2 Create a new sudo user
+If you're using a fresh installation of Ubuntu you are proberbaley loggedin as root user. This example creates a new user calledc "Tyrell", but you should replace it with the username you like.
     adduser tyrell
     usermod -aG sudo tyrell
     su - tyrell
