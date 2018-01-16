@@ -46,6 +46,30 @@ Laravel setup guide for Ubuntu 16.04 on DigitalOcean
 Now, let's install the dependencies. We'll need curl in order to download Composer and php-cli for installing and running it. The php-mbstring package is necessary to provide functions for a library we'll be using. git is used by Composer for downloading project dependencies, and unzip for extracting zipped packages. Everything can be installed with the following command:
                           
     sudo apt-get install curl php-cli php-mbstring git unzip
+    
+ ## Configure the Nginx server
+    sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example.com
+    sudo nano /etc/nginx/sites-available/example.com
+    
+    root /var/www/laravel/website/public;
+    index index.html index.htm index.nginx-debian.html index.php;
+    server_name example.com www.example.com;
+
+    try_files $uri $uri/ /index.php?query_string;
+
+    location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+
+    fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+    }
+    
+    sudo ln -s etc/nginx/sites-available/example.com etc/nginx/sites-enabled/example.com
+    cd /etc/nginx/sites-available/
+    sudo rm default
+    sudo service nginx restart
+Use the Nginx command to check if your Nginx is configured right.
+    
+    sudo nginx -t
 
 ## Installing en Downloading the Composer
     cd ~
@@ -64,7 +88,37 @@ To install composer globally, use the following:
 To test your installation, run:
 
     composer
-
+    
 ## Configuring Composer
-    sudo composer global require "laravel/installer=~1.1"
+    sudo composer global require "laravel/installer"
+    
+## Create Folder to install Laravel into
+    cd /var/www
+    sudo mkdir example.com
+    sudo chown $USER:$USER example.com/
+    cd example.com/
+    
+## Install Laravel Website
+    laravel new website
+    
+## Set permissions and ownership
+    sudo chown -R -v $USER:www-data website/
+    sudo chmod -R -v 750 website/
+    cd website
+    sudo chmod -R -v 770 storage/
+    sudo chmod -R -v 770 bootstrap/cache
+    
+## Configure The Enviroment
+    cp .env.example .env
+    php artisan key:generate
+    sudo nano .env
+
+    APP_ENV=production
+    APP_DEBUG=false
+    APP_KEY=you just generated key
+    APP_URL=http://example.com
+    DB_HOST=127.0.0.1
+    DB_DATABASE=laravel
+    DB_USERNAME=laraveluser
+    DB_PASSWORD=password
 
