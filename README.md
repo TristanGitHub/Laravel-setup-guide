@@ -1,18 +1,14 @@
 # How To Deploy a Laravel Application with Nginx on Ubuntu 16.04 
 Laravel is one of the most popular open-source web application frameworks written in PHP. This framework helps developers build applicationsvby making frequently-used application tasks.
 
-This tutorial, guides you to deploy a simple Laravel application with a production environment in mind, which requires a few common steps. For example, applications should use a dedicated database user with access limited only to necessary databases. File permissions should guarantee that only necessary directories and files are writable. Application settings should be taken into consideration to make sure no debugging information is being displayed to the end user, which could expose application configuration details.
-
-Installing Laravel on Ubuntu 16.04 is pretty much easy. Follow this step by step guide and you should have Laravel up and running in few minutes.
+This tutorial, guides you to deploy a simple Laravel application with a production environment in mind, which requires a few common steps. For example, applications should use a dedicated database user with access limited only to necessary databases. File permissions should guarantee that only necessary directories and files are writable. Application settings should be taken into consideration to make sure no debugging information is being displayed to the end user, which could expose application configuration details. Installing Laravel on Ubuntu 16.04 is pretty much easy. Follow this step by step guide and you should have Laravel up and running in few minutes.
 
 ## Step 1 Update and Upgrade
     sudo apt-get update
     sudo apt-get upgrade -y
 
 ## Step 2 Create a new sudo user (Optional)
-If you're using a fresh installation of Ubuntu you are proberbaley loggedin as root user. This example creates a new user calledc "Tyrell", but you should replace it with the username you like.
-
-You will be asked a few questions, starting with the account password. Enter a strong password and, optionally, fill in any of the additional information if you would like. This is not required and you can just hit ENTER in any field you wish to skip.
+If you're using a fresh installation of Ubuntu you are proberbaley loggedin as root user. This example creates a new user calledc "Tyrell", but you should replace it with the username you like. You will be asked a few questions, starting with the account password. Enter a strong password and, optionally, fill in any of the additional information if you would like. This is not required and you can just hit ENTER in any field you wish to skip.
     
     adduser tyrell
     
