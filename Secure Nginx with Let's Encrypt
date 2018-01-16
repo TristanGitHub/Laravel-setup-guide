@@ -1,4 +1,4 @@
-##Step 1 — Installing Certbot
+## Step 1 — Installing Certbot
 The first step to using Let's Encrypt to obtain an SSL certificate is to install the Certbot software on your server.
 
 Certbot is in very active development, so the Certbot packages provided by Ubuntu tend to be outdated. However, the Certbot developers maintain a Ubuntu software repository with up-to-date versions, so we'll use that repository instead.
