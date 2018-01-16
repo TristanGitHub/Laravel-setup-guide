@@ -9,7 +9,7 @@ Installing Laravel on Ubuntu 16.04 is pretty much easy. Follow this step by step
     sudo apt-get update
     sudo apt-get upgrade -y
 
-## Step 2 Create a new sudo user
+## Step 2 Create a new sudo user (Optional)
 If you're using a fresh installation of Ubuntu you are proberbaley loggedin as root user. This example creates a new user calledc "Tyrell", but you should replace it with the username you like.
 
 You will be asked a few questions, starting with the account password. Enter a strong password and, optionally, fill in any of the additional information if you would like. This is not required and you can just hit ENTER in any field you wish to skip.
@@ -24,7 +24,7 @@ Now login as you new user.
     
     su - tyrell
     
-## Create/Add SSH key for logging in
+## Step 3 Create/Add SSH key for secure login
     mkdir ~/.ssh
     chmod 700 ~/.ssh
     nano ~/.ssh/authorized_keys
